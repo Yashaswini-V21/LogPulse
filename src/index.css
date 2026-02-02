@@ -6,6 +6,70 @@
 
 @layer base {
   :root {
+    /* Light theme (default) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 174 72% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 174 72% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 38 92% 10%;
+
+    --success: 142 72% 45%;
+    --success-foreground: 142 72% 10%;
+
+    --info: 200 85% 55%;
+    --info-foreground: 200 85% 10%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 174 72% 56%;
+
+    --radius: 0.5rem;
+
+    --terminal-green: 142 72% 45%;
+    --terminal-cyan: 174 72% 46%;
+    --terminal-amber: 38 92% 45%;
+    --terminal-red: 0 72% 45%;
+    --terminal-blue: 200 85% 45%;
+    --terminal-purple: 280 72% 50%;
+
+    --glow-primary: 0 0 20px hsl(174 72% 56% / 0.2);
+    --glow-success: 0 0 20px hsl(142 72% 45% / 0.2);
+    --glow-warning: 0 0 20px hsl(38 92% 55% / 0.2);
+    --glow-error: 0 0 20px hsl(0 72% 55% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222.2 84% 4.9%;
+    --sidebar-primary: 174 72% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 94%;
+    --sidebar-accent-foreground: 222.2 84% 4.9%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 174 72% 56%;
+  }
+
+  .dark {
+    /* Dark theme (cyberpunk) */
     --background: 220 20% 8%;
     --foreground: 180 10% 90%;
 
@@ -43,8 +107,6 @@
     --input: 220 15% 18%;
     --ring: 174 72% 56%;
 
-    --radius: 0.5rem;
-
     --terminal-green: 142 72% 55%;
     --terminal-cyan: 174 72% 56%;
     --terminal-amber: 38 92% 55%;
@@ -65,11 +127,6 @@
     --sidebar-accent-foreground: 180 10% 90%;
     --sidebar-border: 220 15% 18%;
     --sidebar-ring: 174 72% 56%;
-  }
-
-  .dark {
-    --background: 220 20% 8%;
-    --foreground: 180 10% 90%;
   }
 }
 

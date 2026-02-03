@@ -12,7 +12,16 @@ const queryClient = new QueryClient();
 const App = () => {
   // Initialize theme on app load
   useEffect(() => {
-    const stored = localStorage.getItem('logpulse-theme');
+    // Only run in browser environment
+    if (typeof window === 'undefined') return;
+    
+    let stored: string | null = null;
+    try {
+      stored = localStorage.getItem('logpulse-theme');
+    } catch {
+      // Fail silently in private browsing mode
+    }
+    
     const theme = stored && ['light', 'dark', 'system'].includes(stored) ? stored : 'system';
     
     const root = window.document.documentElement;
@@ -20,7 +29,11 @@ const App = () => {
     
     let effectiveTheme: 'light' | 'dark';
     if (theme === 'system') {
-      effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      try {
+        effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      } catch {
+        effectiveTheme = 'dark'; // fallback
+      }
     } else {
       effectiveTheme = theme as 'light' | 'dark';
     }

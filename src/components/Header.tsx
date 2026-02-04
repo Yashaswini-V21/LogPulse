@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BackendHealth } from '@/types/logs';
 import { ConnectionStatus } from '@/components/ConnectionStatus';
 import { ConnectionStatus as ConnectionStatusType } from '@/hooks/useBackendConnection';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 interface HeaderProps {
   health: BackendHealth | null;
@@ -84,12 +85,16 @@ export function Header({ health, status, error, onSettingsClick, onReconnect }: 
             <span>{currentTime.toLocaleTimeString()}</span>
           </div>
 
-          <button
-            onClick={onSettingsClick}
-            className="p-2 rounded-lg hover:bg-muted transition-colors"
-          >
-            <Settings className="h-5 w-5 text-muted-foreground hover:text-foreground" />
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            
+            <button
+              onClick={onSettingsClick}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+            >
+              <Settings className="h-5 w-5 text-muted-foreground hover:text-foreground" />
+            </button>
+          </div>
         </div>
       </div>
     </header>

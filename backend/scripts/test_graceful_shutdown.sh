@@ -16,6 +16,7 @@ BACKEND_DIR="$(dirname "$0")/.."
 # Build the server
 echo "Building server..."
 cd "$BACKEND_DIR"
+mkdir -p ./tmp
 go build -o ./tmp/logpulse-server ./cmd/server
 
 # Start server in background

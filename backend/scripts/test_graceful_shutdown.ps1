@@ -30,7 +30,7 @@ try {
 
     # Start server in background
     Write-Host "Starting server on port $ServerPort..." -ForegroundColor Yellow
-    $env:PORT = $ServerPort
+    $env:LOKILITE_PORT = $ServerPort
     $ServerProcess = Start-Process -FilePath $ServerExe -PassThru -WindowStyle Hidden
     
     # Wait for server to start
